@@ -1,13 +1,9 @@
 const formatString = function(string) {
-  let res;
-  if (string.length <= 40) {
-    res = string;
-  } else {
+  if (string.length > 40) {
     const CUTSTRING = string.slice(0, 40);
-    res = `${CUTSTRING}...`;
-    console.log(CUTSTRING.length);
+    return `${CUTSTRING}...`;
   }
-  return res;
+  return string;
 };
 
 /*

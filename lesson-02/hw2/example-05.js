@@ -1,10 +1,5 @@
 const checkForSpam = function(message) {
-  let res = false;
-  const MSGARR = message.split(' ');
-  if (MSGARR.includes('spam') || MSGARR.includes('sale')) {
-    res = true;
-  }
-  return res;
+  return message.includes('spam') || message.includes('sale');
 };
 
 /*
