@@ -1,9 +1,10 @@
 import users from './users.js';
 
 const getSortedUniqueSkills = users => {
-  const skills = users
-    .map(user => user.skills)
-    .reduce((newArr, user) => newArr.concat(...user));
+  const skills = users.reduce((skills, user) => {
+    skills.push(...user.skills);
+    return skills;
+  }, []);
 
   return skills.filter((user, index) => skills.indexOf(user) === index).sort();
 };
