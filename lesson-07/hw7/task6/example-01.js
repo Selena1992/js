@@ -1,18 +1,18 @@
 const input = document.querySelector('input#validation-input');
-let currentStyle;
 
 function validateInputValue() {
-  if (Boolean(currentStyle) === true) {
-    input.classList.remove(currentStyle);
-  }
-
   if (input.getAttribute('data-length') === input.value.length.toString()) {
     input.classList.add('valid');
-    currentStyle = 'valid';
   } else {
     input.classList.add('invalid');
-    currentStyle = 'invalid';
   }
 }
 
-input.addEventListener('change', validateInputValue);
+input.addEventListener('focus', () => {
+  if (input.classList.contains('valid')) {
+    input.classList.remove('valid');
+  } else if (input.classList.contains('invalid')) {
+    input.classList.remove('invalid');
+  }
+});
+input.addEventListener('blur', validateInputValue);

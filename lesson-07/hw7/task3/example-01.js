@@ -16,12 +16,11 @@ const images = [
   },
 ];
 
-const imgs = images
-  .map(image => {
-    const li = document.createElement('li');
-    li.textContent = `<li><img src="${image.url}" alt="${image.alt}" width="500">`;
-    return li.textContent;
-  })
-  .join('');
+const imgs = images.reduce((strOfLi, image) => {
+  const li = document.createElement('li');
+  li.textContent = `<li><img src="${image.url}" alt="${image.alt}" width="500">`;
+  strOfLi += li.textContent;
+  return strOfLi;
+}, '');
 
-document.querySelector('#gallery').insertAdjacentHTML('afterbegin', imgs);
+document.getElementById('gallery').insertAdjacentHTML('afterbegin', imgs);

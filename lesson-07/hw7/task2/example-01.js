@@ -15,4 +15,4 @@ const ingr = ingredients
   })
   .join('');
 
-document.querySelector('#ingredients').insertAdjacentHTML('afterbegin', ingr);
+document.getElementById('ingredients').insertAdjacentHTML('afterbegin', ingr);
