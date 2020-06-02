@@ -72,46 +72,47 @@
 // ========================================
 // Throttle
 // ========================================
-const refs = {
-  wrapper: document.querySelector('.sections'),
-  title: document.querySelector('.title'),
-};
+// const refs = {
+//   wrapper: document.querySelector('.sections'),
+//   title: document.querySelector('.title'),
+// };
 
-const handleScroll = e => {
-  refs.title.textContent = e.target.scrollTop;
-};
+// const handleScroll = e => {
+//   refs.title.textContent = e.target.scrollTop;
+// };
 
-function throttle(callback, delay) {
-  let timeout; // id
+// function throttle(callback, delay) {
+//   let timeout; // id
 
-  return function() {
-    if (timeout) {
-      console.log('throttle');
-      return;
-    }
+//   return function() {
+//     if (timeout) {
+//       console.log('throttle');
+//       return;
+//     }
 
-    timeout = setTimeout(() => {
-      callback(...arguments);
-      timeout = null;
-    }, delay);
-  };
-}
+//     timeout = setTimeout(() => {
+//       callback(...arguments);
+//       timeout = null;
+//     }, delay);
+//   };
+// }
 
-function debounce(callback, delay) {
-  let timeout; // id
+// function debounce(callback, delay) {
+//   let timeout; // id
 
-  return function() {
-    if (timeout) {
-      console.log('debounce');
-      clearTimeout(timeout);
-    }
+//   return function() {
+//     if (timeout) {
+//       console.log('debounce');
+//       clearTimeout(timeout);
+//     }
 
-    timeout = setTimeout(() => {
-      callback(...arguments);
-      timeout = null;
-    }, delay);
-  };
-}
+//     timeout = setTimeout(() => {
+//       callback(...arguments);
+//       timeout = null;
+//     }, delay);
+//   };
+// }
 
-// wrapper.addEventListener('scroll', throttle(handleScroll, 500));
-refs.wrapper.addEventListener('scroll', debounce(handleScroll, 500));
+// // wrapper.addEventListener('scroll', throttle(handleScroll, 500));
+// refs.wrapper.addEventListener('scroll', debounce(handleScroll, 500));
+
